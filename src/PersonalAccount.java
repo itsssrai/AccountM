@@ -31,12 +31,10 @@ public class PersonalAccount {
     }
     public void printTransactionHistory() {
         System.out.println("Transaction History for Account #" + this.accountNumber + " (" + this.accountHolder + "):");
-        Iterator var1 = this.transactions.iterator();
-        while(var1.hasNext()) {
-            Amount transaction = (Amount)var1.next();
-            PrintStream var10000 = System.out;
-            String var10001 = transaction.getTransactionType();
-            var10000.println(var10001 + ": $" + transaction.getAmount());        }
+       for (Amount transaction : transactions)
+        {
+            System.out.println(transaction.getTransactionType() + ": $" + transaction.getAmount());
+        }       
     }
     public double getBalance() {
         return this.balance;    }
